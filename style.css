@@ -104,6 +104,91 @@ label:focus-visible {
     display: none;
 }
 
+.theme-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.theme-toggle-label {
+    position: absolute;
+    right: 0;
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--navy);
+    background: var(--white);
+    box-shadow: 0 8px 24px rgba(17, 36, 58, 0.08);
+    cursor: pointer;
+}
+
+.theme-icon {
+    position: absolute;
+    font-size: 1.2rem;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.moon-icon {
+    opacity: 0;
+    transform: scale(0.7) rotate(-30deg);
+}
+
+.nav-links {
+    margin-right: 64px;
+}
+
+body:has(.theme-toggle:checked) {
+    --navy: #edf5ff;
+    --navy-light: #dceaf7;
+    --blue: #78b7ed;
+    --sky: #1d354e;
+    --cream: #101722;
+    --white: #182230;
+    --text: #d9e4ef;
+    --muted: #9eb0c2;
+    --border: #304155;
+    background:
+        radial-gradient(circle at 85% 8%, rgba(120, 183, 237, 0.08), transparent 22rem),
+        var(--cream);
+}
+
+body:has(.theme-toggle:checked) .theme-toggle-label {
+    color: #ffd96a;
+}
+
+body:has(.theme-toggle:checked) .sun-icon {
+    opacity: 0;
+    transform: scale(0.7) rotate(30deg);
+}
+
+body:has(.theme-toggle:checked) .moon-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+body:has(.theme-toggle:checked) .site-header {
+    background: rgba(16, 23, 34, 0.92);
+}
+
+body:has(.theme-toggle:checked) .profile-card {
+    border-color: rgba(120, 183, 237, 0.16);
+    background: linear-gradient(145deg, #1b2d43, #182230);
+}
+
+body:has(.theme-toggle:checked) .section-alt {
+    background: rgba(24, 34, 48, 0.72);
+}
+
+body:has(.theme-toggle:checked) .tag,
+body:has(.theme-toggle:checked) .secondary {
+    background: #203247;
+}
+
 .brand {
     color: var(--navy);
     font-size: 1.12rem;
@@ -511,6 +596,8 @@ footer {
     }
 
     .nav-toggle-label {
+        position: absolute;
+        right: 0;
         width: 42px;
         height: 42px;
         display: flex;
@@ -522,6 +609,10 @@ footer {
         border-radius: 4px;
         background: var(--white);
         cursor: pointer;
+    }
+
+    .theme-toggle-label {
+        right: 52px;
     }
 
     .nav-toggle-label span {
