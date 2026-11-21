@@ -45,9 +45,15 @@ a {
 }
 
 .nav {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.nav-toggle,
+.nav-toggle-label {
+    display: none;
 }
 
 .brand {
@@ -403,8 +409,66 @@ footer {
         height: 72px;
     }
 
+    .nav-toggle-label {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        background: var(--white);
+        cursor: pointer;
+    }
+
+    .nav-toggle-label span {
+        width: 20px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--navy);
+        transition: 0.2s ease;
+    }
+
     .nav-links {
+        position: absolute;
+        top: 64px;
+        right: 0;
+        left: 0;
         display: none;
+        flex-direction: column;
+        gap: 0;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--white);
+        box-shadow: 0 12px 30px rgba(17, 36, 58, 0.12);
+    }
+
+    .nav-links a {
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: 0;
+    }
+
+    .nav-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
     }
 
     .hero {
