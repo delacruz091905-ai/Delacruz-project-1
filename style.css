@@ -20,6 +20,28 @@ html {
     scroll-behavior: smooth;
 }
 
+@keyframes section-enter {
+    from {
+        opacity: 0;
+        transform: translateY(34px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hero-enter {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 body {
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
     color: var(--text);
@@ -110,6 +132,15 @@ label:focus-visible {
     align-items: center;
     gap: 76px;
     padding-block: 42px 64px;
+    animation: hero-enter 0.8s ease-out both;
+}
+
+.hero-copy {
+    animation: hero-enter 0.8s 0.12s ease-out both;
+}
+
+.profile-card {
+    animation: hero-enter 0.8s 0.24s ease-out both;
 }
 
 .eyebrow {
@@ -412,6 +443,30 @@ footer {
 .footer-inner a {
     color: var(--navy);
     font-weight: 800;
+}
+
+@supports (animation-timeline: view()) {
+    .page-section:not(.hero) {
+        animation: section-enter linear both;
+        animation-timeline: view();
+        animation-range: entry 8% cover 32%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .hero,
+    .hero-copy,
+    .profile-card,
+    .page-section,
+    .button,
+    .project-card {
+        animation: none !important;
+        transition: none !important;
+    }
 }
 
 @media (max-width: 850px) {
