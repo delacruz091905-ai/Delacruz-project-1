@@ -20,6 +20,12 @@ html {
     scroll-behavior: smooth;
 }
 
+.page-section,
+.section,
+.contact-section {
+    scroll-margin-top: 84px;
+}
+
 @keyframes section-enter {
     from {
         opacity: 0;
