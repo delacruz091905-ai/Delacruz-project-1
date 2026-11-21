@@ -1,13 +1,15 @@
 :root {
-    --navy: #11243a;
-    --navy-light: #1b3552;
-    --blue: #2878bb;
-    --sky: #dcecf6;
-    --cream: #f7f7f2;
+    --navy: #17243d;
+    --navy-light: #263b5a;
+    --blue: #3d7cf4;
+    --blue-deep: #245ac7;
+    --sky: #dfeaff;
+    --cream: #f5f7fb;
     --white: #ffffff;
-    --text: #243448;
-    --muted: #66758a;
-    --border: #dde5ec;
+    --text: #25334a;
+    --muted: #6d7b91;
+    --border: #dfe5ef;
+    --surface: #eef3fa;
 }
 
 * {
@@ -52,7 +54,8 @@ body {
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
     color: var(--text);
     background:
-        radial-gradient(circle at 85% 8%, rgba(40, 120, 187, 0.08), transparent 22rem),
+        radial-gradient(circle at 85% 8%, rgba(61, 124, 244, 0.11), transparent 22rem),
+        radial-gradient(circle at 10% 70%, rgba(90, 173, 255, 0.06), transparent 28rem),
         var(--cream);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -149,17 +152,20 @@ label:focus-visible {
 }
 
 body:has(.theme-toggle:checked) {
-    --navy: #edf5ff;
-    --navy-light: #dceaf7;
-    --blue: #78b7ed;
-    --sky: #1d354e;
-    --cream: #101722;
-    --white: #182230;
-    --text: #d9e4ef;
-    --muted: #9eb0c2;
-    --border: #304155;
+    --navy: #f1f5ff;
+    --navy-light: #dbe5ff;
+    --blue: #86a9ff;
+    --blue-deep: #658ef2;
+    --sky: #1d2e4a;
+    --cream: #0d1422;
+    --white: #171f30;
+    --text: #dde6f5;
+    --muted: #a6b3c8;
+    --border: #303d53;
+    --surface: #202b3d;
     background:
-        radial-gradient(circle at 85% 8%, rgba(120, 183, 237, 0.08), transparent 22rem),
+        radial-gradient(circle at 85% 8%, rgba(134, 169, 255, 0.09), transparent 22rem),
+        radial-gradient(circle at 10% 70%, rgba(61, 124, 244, 0.07), transparent 28rem),
         var(--cream);
 }
 
@@ -305,7 +311,7 @@ body:has(.theme-toggle:checked) .secondary {
 }
 
 .primary:hover {
-    background: var(--blue);
+    background: var(--blue-deep);
 }
 
 .secondary {
@@ -323,7 +329,7 @@ body:has(.theme-toggle:checked) .secondary {
     padding: 38px;
     border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 18px;
-    background: linear-gradient(145deg, #cce3f3, #edf5fa);
+    background: linear-gradient(145deg, #dbe6ff, #edf3ff);
     box-shadow: 20px 20px 0 var(--sky), 0 24px 60px rgba(17, 36, 58, 0.10);
 }
 
@@ -406,7 +412,8 @@ body:has(.theme-toggle:checked) .secondary {
 
 .section-alt {
     border-block: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.72);
+    background: var(--surface);
+    background: color-mix(in srgb, var(--white) 82%, var(--surface));
 }
 
 .credential-card {
@@ -500,7 +507,7 @@ body:has(.theme-toggle:checked) .secondary {
     padding: 6px 9px;
     border-radius: 3px;
     color: var(--blue);
-    background: #edf5fa;
+    background: var(--sky);
     font-size: 0.72rem;
     font-weight: 800;
 }
@@ -508,7 +515,7 @@ body:has(.theme-toggle:checked) .secondary {
 .contact-section {
     padding-block: 78px;
     color: var(--white);
-    background: var(--navy);
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
 }
 
 .contact-inner {
