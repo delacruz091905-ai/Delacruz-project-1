@@ -336,6 +336,7 @@ body:has(.theme-toggle:checked) .secondary {
 .profile-avatar {
     width: 180px;
     height: 180px;
+    aspect-ratio: 1;
     margin: auto;
     border: 10px solid rgba(255, 255, 255, 0.78);
     border-radius: 50%;
@@ -358,6 +359,12 @@ body:has(.theme-toggle:checked) .secondary {
 
 .section {
     padding-block: 112px;
+}
+
+.section,
+.contact-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
 }
 
 .section-heading {
