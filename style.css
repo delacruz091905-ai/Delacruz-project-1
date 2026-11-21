@@ -340,6 +340,12 @@ a {
     color: var(--white);
 }
 
+.address {
+    margin-top: 14px;
+    color: #cbd9e6;
+    font-size: 0.95rem;
+}
+
 .light {
     color: var(--navy);
     background: var(--white);
