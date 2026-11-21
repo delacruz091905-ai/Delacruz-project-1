@@ -97,6 +97,7 @@ label:focus-visible {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 84px;
 }
 
 .nav-toggle,
@@ -110,6 +111,11 @@ label:focus-visible {
     height: 1px;
     overflow: hidden;
     opacity: 0;
+}
+
+.theme-toggle:focus-visible + .theme-toggle-label {
+    outline: 3px solid rgba(40, 120, 187, 0.35);
+    outline-offset: 4px;
 }
 
 .theme-toggle-label {
@@ -224,6 +230,10 @@ body:has(.theme-toggle:checked) .secondary {
     gap: 76px;
     padding-block: 42px 64px;
     animation: hero-enter 0.8s ease-out both;
+}
+
+.hero-copy {
+    align-self: center;
 }
 
 .hero-copy {
@@ -345,7 +355,8 @@ body:has(.theme-toggle:checked) .secondary {
 }
 
 .section-heading {
-    margin-bottom: 44px;
+    max-width: 720px;
+    margin-bottom: 48px;
 }
 
 .section-heading h2,
@@ -361,7 +372,8 @@ body:has(.theme-toggle:checked) .secondary {
 .about-grid {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
-    gap: 80px;
+    align-items: start;
+    gap: 64px;
 }
 
 .about-text {
@@ -443,6 +455,7 @@ body:has(.theme-toggle:checked) .secondary {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
     gap: 18px;
 }
 
@@ -473,7 +486,8 @@ body:has(.theme-toggle:checked) .secondary {
 .project-card h3 {
     color: var(--navy);
     font-size: 1.32rem;
-    margin: 38px 0 10px;
+    min-height: 52px;
+    margin: 32px 0 10px;
 }
 
 .project-card > p:not(.project-number) {
@@ -502,6 +516,10 @@ body:has(.theme-toggle:checked) .secondary {
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+}
+
+.contact-inner > div {
+    max-width: 720px;
 }
 
 .contact-inner h2 {
@@ -563,7 +581,7 @@ footer {
 @media (max-width: 850px) {
     .hero {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 44px;
         padding-block: 70px;
     }
 
@@ -574,7 +592,7 @@ footer {
 
     .about-grid {
         grid-template-columns: 1fr;
-        gap: 34px;
+        gap: 32px;
     }
 
     .project-grid {
@@ -593,6 +611,14 @@ footer {
 
     .site-header {
         height: 72px;
+    }
+
+    .nav {
+        min-height: 72px;
+    }
+
+    .section-heading {
+        margin-bottom: 36px;
     }
 
     .nav-toggle-label {
@@ -631,6 +657,7 @@ footer {
         display: none;
         flex-direction: column;
         gap: 0;
+        margin-right: 0;
         overflow: hidden;
         border: 1px solid var(--border);
         border-radius: 6px;
